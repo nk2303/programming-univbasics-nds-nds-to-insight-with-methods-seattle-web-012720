@@ -16,5 +16,9 @@ end
 # { directorOne => allTheMoneyTheyMade, ... }
 def directors_totals(nds)
   result = {}
-  
+  nds.length.times do |director_data|
+    name = nds[director_data][:name]
+    result[name] = gross_for_director(director_data)
+  end
+  return result
 end
